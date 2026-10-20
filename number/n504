@@ -1,0 +1,31 @@
+// class Solution {
+//     public String convertToBase7(int num) {
+       
+//        if(num==0) return "0";
+//        boolean negative=num<0;
+//        num=Math.abs(num);
+//        String s="";
+//        while(num!=0){
+//         s=num%7+s;
+//         num/=7;
+//        }
+//     return negative ? "-" + s : s;
+//     }
+// }
+class Solution {
+    public String convertToBase7(int num) {
+        if (num == 0) return "0";
+
+        boolean negative = num < 0;
+        num = Math.abs(num);
+
+        String s = "";
+
+        while (num > 0) {
+            s = (num % 7) + s;
+            num /= 7;
+        }
+
+        return negative ? "-" + s : s;
+    }
+}
