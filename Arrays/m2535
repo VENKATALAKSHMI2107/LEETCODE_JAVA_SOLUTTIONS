@@ -1,0 +1,21 @@
+class Solution {
+    public int differenceOfSum(int[] nums) {
+        int sum=0;
+        for(int i=0;i<nums.length;i++){
+            sum=sum+nums[i];
+        }
+        
+         int dsum=0;
+        for(int i=0;i<nums.length;i++){
+           
+           int num = nums[i];
+
+            while (num != 0) {
+                int last = num % 10;
+                dsum = dsum + last;
+                num = num / 10;
+        }
+        }
+return  sum-dsum;
+    }
+}
